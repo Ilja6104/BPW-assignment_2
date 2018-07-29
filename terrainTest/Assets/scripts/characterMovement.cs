@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class characterMovement : MonoBehaviour {
 
-    public float speed = 6f;
-    public float jumpHeight = 40f;
+    public float speed = 9f;
+    public float jumpHeight;
     public Rigidbody rb;
     private bool grounded = true;
 
@@ -16,10 +16,7 @@ public class characterMovement : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
-
-
-        float translation = Input.GetAxis("Horizontal") * speed;
-        
+ 
 
         if (Input.GetKey(KeyCode.D))
         {
@@ -47,7 +44,7 @@ public class characterMovement : MonoBehaviour {
     {
         
 
-        if (col.gameObject.tag == "Ground")
+        if (col.gameObject.tag == "Ground" || col.gameObject.tag == "Cart")
         {
             grounded = true;
         }
