@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 
+
 public class cartMovement : MonoBehaviour {
 
     public Transform target;
@@ -9,6 +10,7 @@ public class cartMovement : MonoBehaviour {
     private Vector3 offset;
     public float distaneToGrab;
     public Vector3 position;
+    public characterMovement playerScript;
     private Vector3 relativePos;
     private bool inRange;
 
@@ -43,17 +45,17 @@ public class cartMovement : MonoBehaviour {
 
          position = transform.position;
 
-        if (inRange == true && cartFollow == false && Input.GetKey(KeyCode.LeftControl))
+        if (inRange == true && cartFollow == false && Input.GetKeyDown(KeyCode.LeftControl))
         {
             cartFollow = true;
+            characterMovement.speed -= 3;
             print("on");
         }
-
-        if (cartFollow == true && Input.GetKey(KeyCode.RightControl))
+        else if (cartFollow == true && Input.GetKeyDown(KeyCode.LeftControl))
         {
             cartFollow = false;
             print("off");
-
+            characterMovement.speed += 3;
         }
 
     }

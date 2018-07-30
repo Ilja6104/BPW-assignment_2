@@ -193,7 +193,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 4294967295
   m_Materials:
   - {fileID: 2100000, guid: 74a38bdb8dadcc349bd5b0f2dcc1bd19, type: 2}
-  - {fileID: 2100000, guid: 74a38bdb8dadcc349bd5b0f2dcc1bd19, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -228,7 +228,7 @@ ParticleSystemRenderer:
   m_EnableGPUInstancing: 1
   m_ApplyActiveColorSpace: 1
   m_VertexStreams: 00010304
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -864,7 +864,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 0.97, y: 7.33, z: 10.51}
+    m_Scale: {x: 1, y: 7, z: 11}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -2705,7 +2705,7 @@ ParticleSystem:
     strength:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 1
+      scalar: 2
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -19535,7 +19535,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ae2f264ceb536d43a868dfff7bc7dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6
   jumpHeight: 6
   rb: {fileID: 0}
 --- !u!1 &1317960281
@@ -24575,6 +24574,7 @@ MonoBehaviour:
   smoothSpeed: 0.25
   distaneToGrab: 3.5
   position: {x: 0, y: 0, z: 0}
+  playerScript: {fileID: 1303728294}
 --- !u!54 &1840271811
 Rigidbody:
   m_ObjectHideFlags: 0

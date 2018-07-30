@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class characterMovement : MonoBehaviour {
 
-    public float speed = 9f;
+    public static float speed = 7f;
     public float jumpHeight;
     public Rigidbody rb;
     private bool grounded = true;
+   // public int windPushback = 0;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
     void Update() {
  
 
@@ -29,7 +29,6 @@ public class characterMovement : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded == true)
        {
-
             // rb.AddForce(0, jumpHeight, 0, ForceMode.Impulse);
             rb.velocity = new Vector3(0, jumpHeight, 0);
             grounded = false;
