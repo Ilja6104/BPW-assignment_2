@@ -7,7 +7,7 @@ public class windForceScript : MonoBehaviour {
 
 
     public Rigidbody playerRigidbody;
-    public float windStrength;
+    private float windStrength = 10;
 
  
     public Rigidbody cartRigidbody;

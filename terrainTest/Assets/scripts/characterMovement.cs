@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class characterMovement : MonoBehaviour {
 
-    public static float speed = 7f;
+    public static float speed = 23f;
     public float jumpHeight;
-    public Rigidbody rb;
+    private Rigidbody rb;
     private bool grounded = true;
    public int windPushback = 0;
 
@@ -20,12 +20,12 @@ public class characterMovement : MonoBehaviour {
 
         if (Input.GetKey(KeyCode.D))
         {
-            transform.position += Vector3.right * Time.deltaTime * speed;
+            rb.AddForce(Vector3.right * speed, ForceMode.Force);
         }
         else if (Input.GetKey(KeyCode.A))
         {
-            transform.position += Vector3.left * Time.deltaTime * speed;
-           
+            rb.AddForce(Vector3.left * speed, ForceMode.Force);
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded == true)
