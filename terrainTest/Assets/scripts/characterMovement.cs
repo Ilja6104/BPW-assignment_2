@@ -8,7 +8,7 @@ public class characterMovement : MonoBehaviour {
     public float jumpHeight;
     public Rigidbody rb;
     private bool grounded = true;
-   // public int windPushback = 0;
+   public int windPushback = 0;
 
     void Start()
     {
@@ -25,6 +25,7 @@ public class characterMovement : MonoBehaviour {
         else if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * Time.deltaTime * speed;
+           
         }
 
         if (Input.GetKeyDown(KeyCode.Space) && grounded == true)
