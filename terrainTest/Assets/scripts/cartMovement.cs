@@ -11,6 +11,7 @@ public class cartMovement : MonoBehaviour {
     public float distaneToGrab;
     public Vector3 position;
     public characterMovement playerScript;
+    public windForceScript windScript;
     private Vector3 relativePos;
     private bool inRange;
 
@@ -48,14 +49,14 @@ public class cartMovement : MonoBehaviour {
         if (inRange == true && cartFollow == false && Input.GetKeyDown(KeyCode.LeftControl))
         {
             cartFollow = true;
-            characterMovement.speed -= 3;
+           // characterMovement.speed -= 0.02f;
             print("on");
         }
         else if (cartFollow == true && Input.GetKeyDown(KeyCode.LeftControl))
         {
             cartFollow = false;
             print("off");
-            characterMovement.speed += 3;
+            //characterMovement.speed -= 0.02f;
         }
 
     }
