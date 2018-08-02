@@ -2,42 +2,95 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
+using UnityEngine.SceneManagement;
 
 public class postProcessingSwitch : MonoBehaviour {
 
-    PostProcessVolume m_Volume;
-    Vignette m_Vignette;
-    ChromaticAberration m_chromaticAberration;
+    PostProcessVolume volume;
+   
+    Vignette vignette;
+    ChromaticAberration chromaticAberration;
+    public static ColorGrading colorGrading;
+    public static float transitionSpeed = 1.5f;
+    static float t = 0.0f;
+    static float u = 0.0f;
+    public static bool endLevelLerp = false;
+    public static bool startLevelLerp = true;
+
 
     void Start()
     {
-        m_Vignette = ScriptableObject.CreateInstance<Vignette>();
-        m_Vignette.enabled.Override(true);
-        m_chromaticAberration = ScriptableObject.CreateInstance<ChromaticAberration>();
-        m_chromaticAberration.enabled.Override(true);
+        vignette = ScriptableObject.CreateInstance<Vignette>();
+        vignette.enabled.Override(true);
 
-        m_Volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, m_Vignette, m_chromaticAberration);
+        chromaticAberration = ScriptableObject.CreateInstance<ChromaticAberration>();
+        chromaticAberration.enabled.Override(true);
+
+        colorGrading = ScriptableObject.CreateInstance<ColorGrading>();
+        colorGrading.enabled.Override(true);
+
+        volume = PostProcessManager.instance.QuickVolume(gameObject.layer, 100f, vignette, chromaticAberration, colorGrading);
+        
+
     }
 
     void Update()
     {
       if(characterHealth.currentHealth <= 5)
         {
-            m_Vignette.intensity.Override(0.3f);
-            m_chromaticAberration.intensity.Override(0.8f);
+            vignette.intensity.Override(0.3f);
+            chromaticAberration.intensity.Override(0.8f);
 
         }
       else if (characterHealth.currentHealth <= 8)
         {
-            m_Vignette.intensity.Override(0.6f);
-            m_chromaticAberration.intensity.Override(1f);
+            vignette.intensity.Override(0.6f);
+            chromaticAberration.intensity.Override(1f);
         }
       else
         {
-            m_Vignette.intensity.Override(0f);
-            m_chromaticAberration.intensity.Override(0f);
+            vignette.intensity.Override(0f);
+            chromaticAberration.intensity.Override(0f);
         }
+
+        
+        if (startLevelLerp == true)
+        {
+            colorGrading.postExposure.Override(Mathf.Lerp(0f, 7f, u) - 7);
+            u += transitionSpeed * Time.deltaTime;
+            if (u >= 6)
+            {
+                
+                startLevelLerp = false;
+                u = 0.0f;
+                
+            }
+        }
+
+
+        if (endLevelLerp == true)
+        {
+            colorGrading.postExposure.Override(Mathf.Lerp(0f, 7f, t) * -1) ;
+            t += transitionSpeed * Time.deltaTime;
+            if(t >= 6)
+            {
+                
+                endLevelLerp = false;
+                t = 0.0f;
+                startLevelLerp = true;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            }
+        }
+
     }
 
- 
+
+
+
+    public static void nextlevel()
+    {
+        
+
+    }
+    
 }

@@ -31,7 +31,7 @@ public class characterMovement : MonoBehaviour {
             // transform.position += Vector3.right * Time.deltaTime * speed;
             //rb.AddForce(Vector3.right * speed, ForceMode.Force);
             rightInput = 1;
-            Debug.Log("right: " + rightInput); 
+            //Debug.Log("right: " + rightInput); 
         }
         else
         {
@@ -45,7 +45,7 @@ public class characterMovement : MonoBehaviour {
             // transform.position += Vector3.left * Time.deltaTime * speed;
           //  rb.AddForce(Vector3.left * speed, ForceMode.Force);
             leftInput = -1;
-            Debug.Log("left: " + leftInput);
+            //Debug.Log("left: " + leftInput);
         }
         else
         {
@@ -53,8 +53,8 @@ public class characterMovement : MonoBehaviour {
 
         }
 
-        Debug.Log("move: " + move);
-        Debug.Log("hsp: " + hsp);
+       // Debug.Log("move: " + move);
+        //Debug.Log("hsp: " + hsp);
 
         move = leftInput + rightInput;
         hsp = move * speed /*-  windForceScript.windStrength*/;
