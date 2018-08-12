@@ -23,13 +23,14 @@ public class cartMovement : MonoBehaviour {
             if (relativePos.x >= 0)
             {
                 offset.x = 2.5f;
+                offset.y = 0.7f;
 
             }
             else if (relativePos.x < 0)
             {
-                offset.x = -2.5f;
-
-            }
+                offset.x = -1.5f;
+                 offset.y = 0.7f;
+        }
 
        // Debug.Log(relativePos);
 

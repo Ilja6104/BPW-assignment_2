@@ -15,7 +15,11 @@ public class postProcessingSwitch : MonoBehaviour {
     static float t = 0.0f;
     static float u = 0.0f;
     public static bool endLevelLerp = false;
+    public static bool onDeathLerp = false;
+    public static bool endGameLerp = false;
     public static bool startLevelLerp = true;
+    public static bool EndGameUI = false;
+
 
 
     void Start()
@@ -36,45 +40,45 @@ public class postProcessingSwitch : MonoBehaviour {
 
     void Update()
     {
-      if(characterHealth.currentHealth <= 5)
+        if (characterHealth.currentHealth <= 5)
         {
             vignette.intensity.Override(0.3f);
             chromaticAberration.intensity.Override(0.8f);
 
         }
-      else if (characterHealth.currentHealth <= 8)
+        else if (characterHealth.currentHealth <= 8)
         {
             vignette.intensity.Override(0.6f);
             chromaticAberration.intensity.Override(1f);
         }
-      else
+        else
         {
             vignette.intensity.Override(0f);
             chromaticAberration.intensity.Override(0f);
         }
 
-        
+
         if (startLevelLerp == true)
         {
             colorGrading.postExposure.Override(Mathf.Lerp(0f, 7f, u) - 7);
             u += transitionSpeed * Time.deltaTime;
             if (u >= 6)
             {
-                
+
                 startLevelLerp = false;
                 u = 0.0f;
-                
+
             }
         }
 
 
         if (endLevelLerp == true)
         {
-            colorGrading.postExposure.Override(Mathf.Lerp(0f, 7f, t) * -1) ;
+            colorGrading.postExposure.Override(Mathf.Lerp(0f, 7f, t) * -1);
             t += transitionSpeed * Time.deltaTime;
-            if(t >= 6)
+            if (t >= 6)
             {
-                
+
                 endLevelLerp = false;
                 t = 0.0f;
                 startLevelLerp = true;
@@ -82,15 +86,21 @@ public class postProcessingSwitch : MonoBehaviour {
             }
         }
 
+        if (onDeathLerp == true)
+        {
+            colorGrading.postExposure.Override(Mathf.Lerp(0f, 7f, t) * -1);
+            t += transitionSpeed * Time.deltaTime;
+            if (t >= 6)
+            {
+
+                onDeathLerp = false;
+                t = 0.0f;
+                startLevelLerp = true;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+
+        }
     }
 
+} 
 
-
-
-    public static void nextlevel()
-    {
-        
-
-    }
-    
-}

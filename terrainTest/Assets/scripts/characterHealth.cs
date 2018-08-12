@@ -18,7 +18,9 @@ public class characterHealth : MonoBehaviour {
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            currentHealth = maxHealth;
+            postProcessingSwitch.onDeathLerp = true;
+            
         }
 
     }

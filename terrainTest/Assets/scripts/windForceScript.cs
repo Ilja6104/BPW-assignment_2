@@ -16,10 +16,15 @@ public class windForceScript : MonoBehaviour {
        cartRigidbody = cartRigidbody.GetComponent<Rigidbody>();
     }
 	
-	// Update is called once per frame
+	
 	void Update () {
-        playerRigidbody.AddForce(Vector3.left * windStrength, ForceMode.Force);
-        cartRigidbody.AddForce(Vector3.left * windStrength, ForceMode.Force);
-       // characterMovement.hsp -= 2;
+        if (playerRigidbody.transform.position.x >= 25 && playerRigidbody.transform.position.x <= 101)
+        {
+            playerRigidbody.AddForce(Vector3.left * windStrength, ForceMode.Force);
+            cartRigidbody.AddForce(Vector3.left * windStrength, ForceMode.Force);
+        }
+
     }
+
+
 }
