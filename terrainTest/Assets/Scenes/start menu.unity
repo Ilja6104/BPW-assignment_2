@@ -924,12 +924,12 @@ Prefab:
     - target: {fileID: 114133572268484704, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114133572268484704, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114961927126732426, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
@@ -944,22 +944,22 @@ Prefab:
     - target: {fileID: 114198613514418384, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114198613514418384, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114028311079813802, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114028311079813802, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114133572268484704, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
@@ -1002,27 +1002,27 @@ Prefab:
     - target: {fileID: 114961927126732426, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
       propertyPath: m_text
-      value: GAME NAME
+      value: YURI
       objectReference: {fileID: 0}
     - target: {fileID: 114961927126732426, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
       propertyPath: m_textInfo.characterCount
-      value: 9
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 114961927126732426, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
       propertyPath: m_textInfo.spaceCount
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114961927126732426, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
       propertyPath: m_textInfo.wordCount
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224184312113286980, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 362
+      value: 366
       objectReference: {fileID: 0}
     - target: {fileID: 224560674508910482, guid: 2167c403ee1ae784eb6a85ef2321e908,
         type: 2}
@@ -1038,6 +1038,31 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.y
       value: -369.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114961927126732426, guid: 2167c403ee1ae784eb6a85ef2321e908,
+        type: 2}
+      propertyPath: m_fontStyle
+      value: 32
+      objectReference: {fileID: 0}
+    - target: {fileID: 114961927126732426, guid: 2167c403ee1ae784eb6a85ef2321e908,
+        type: 2}
+      propertyPath: m_characterSpacing
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114961927126732426, guid: 2167c403ee1ae784eb6a85ef2321e908,
+        type: 2}
+      propertyPath: m_fontSize
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 114961927126732426, guid: 2167c403ee1ae784eb6a85ef2321e908,
+        type: 2}
+      propertyPath: m_fontSizeBase
+      value: 46
+      objectReference: {fileID: 0}
+    - target: {fileID: 114961927126732426, guid: 2167c403ee1ae784eb6a85ef2321e908,
+        type: 2}
+      propertyPath: m_firstOverflowCharacterIndex
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2167c403ee1ae784eb6a85ef2321e908, type: 2}

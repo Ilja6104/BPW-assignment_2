@@ -1051,7 +1051,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 1, y: 7, z: 11}
+    m_Scale: {x: 1, y: 4.9699736, z: 11}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -4999,7 +4999,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1303728292}
   smoothSpeed: 0.25
-  offset: {x: 20, y: 9.5, z: 0}
+  offset: {x: 34, y: 9.5, z: 0}
 --- !u!82 &211138123
 AudioSource:
   m_ObjectHideFlags: 0
@@ -26200,7 +26200,7 @@ Prefab:
         type: 2}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: bb8786249cd1fb24fad8227255a8665a, type: 2}
+      objectReference: {fileID: 2100000, guid: d03203358406d154a951d2afec066c2f, type: 2}
     - target: {fileID: 114694402168102390, guid: 6093340f27bb97a4ead068734b8db6c9,
         type: 2}
       propertyPath: target
